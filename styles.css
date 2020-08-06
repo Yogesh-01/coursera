@@ -1,0 +1,53 @@
+
+	*{
+		box-sizing: border-box;
+		margin:0px;
+	}
+	h1{
+		text-align: center;
+		margin-bottom: 15px;
+	}
+
+	div.container{       /* makind a div container to contain the paragraphs */
+		position: relative;
+		background-color: teal;
+		border: 1px solid black;
+		float: left; 
+		padding: 20px 10px 10px 10px;  /* Top padding to avoid text over menu headings*/
+		word-wrap: normal;
+		margin-left: 0.5%;  /* giving margin in percent instead of pixel, so that it acts uniformly for each device*/
+		margin-right: 0.5%; /* 0.5*3 =1.5% width used for right margin*/
+		margin-bottom: 10px;
+	}
+	div#first>p.p2{background-color: #DB6F02}
+	div#middle>p.p2{background-color: #DB0864}
+	div#last>p.p2{background-color: #B7CCDE}
+
+	.p1{text-align: left;}   /* main content*/
+	
+	.p2{border: 1px solid black;  /* recipe name (top right) */
+		background-color: maroon;
+        width: 100px;
+		text-align: center;
+		position: absolute;
+	    top:0px;
+	    right:0px;}
+	
+/********* Desktop Mode **********/
+@media (min-width: 992px){
+	div.container{width: 32.3%} /* 3% of width is compensated for paragraph margins*/
+}
+/*********** Tablet Mode *********/
+@media (min-width: 768px) and (max-width: 991px) {
+	div.container{width:49%;} /* 0.5*4 =2 % compensation for total margins, so 1% compensation for 2 column layout*/
+	div#last{width: 99%;}  /* 0.5*2 =1% compensation for total margins for this i column layout*/
+}
+/*********** Mobile Mode *********/
+@media (max-width: 767px) {
+	div.container{
+ 
+		width: 90%;  /* 10% compensation for margins (2*5%) */
+	    margin-left:5%;
+	    margin-right:5%;
+	}
+}
